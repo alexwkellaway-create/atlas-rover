@@ -216,3 +216,62 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ─────────────────────────────────────────────────────────────
+# Atlas Rover — robotics additions
+# ─────────────────────────────────────────────────────────────
+
+# Large binaries: folders and their READMEs are tracked, contents are not.
+data/*
+!data/README.md
+!data/INDEX.md
+
+models/*
+!models/README.md
+!models/MODELS.md
+
+# Recordings and datasets
+*.bag
+*.db3
+*.mcap
+*.pcd
+*.ply
+
+# Trained weights
+*.pt
+*.pth
+*.onnx
+*.engine
+*.tflite
+
+# ROS / colcon build artifacts
+devel/
+install/
+log/
+.colcon/
+
+# The Python template's bare `build/` and `lib/` rules match at ANY depth, which
+# silently swallows our source directories. Re-include them explicitly.
+# (A directory must be un-ignored before files inside it can be.)
+!scripts/build/
+!scripts/build/**
+!software/**/lib/
+!software/**/lib/**
+
+# C++ build
+*.o
+*.a
+*.d
+CMakeFiles/
+CMakeCache.txt
+
+# Local machine- and rover-specific overrides.
+# Commit the template; never the filled-in copy.
+*.local.yaml
+*.local.yml
+secrets/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
